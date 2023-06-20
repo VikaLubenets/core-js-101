@@ -240,16 +240,17 @@ function getRectangleString(width, height) {
 function encodeToRot13(str) {
   let result = '';
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < str.length; i++) {
     let char = str[i];
-    let code = str.charCodeAt(i);
-    let upperCase = code >= 65 && code <= 90;
-    let lowerCase = code >= 97 && code <= 122;
+    const code = str.charCodeAt(i);
+    const upperCase = code >= 65 && code <= 90;
+    const lowerCase = code >= 97 && code <= 122;
 
     if (upperCase || lowerCase) {
-      let oldCode = upperCase ? 65 : 97;
-      let newIndex = (code - oldCode + 13) % 26;
-      let newCode = newIndex + oldCode;
+      const oldCode = upperCase ? 65 : 97;
+      const newIndex = (code - oldCode + 13) % 26;
+      const newCode = newIndex + oldCode;
       char = String.fromCharCode(newCode);
     }
 
