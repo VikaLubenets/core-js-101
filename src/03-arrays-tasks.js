@@ -35,8 +35,17 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const arr = [];
+  let num = 1;
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < len; i++) {
+    if (num % 2) {
+      arr.push(num);
+      num += 2;
+    }
+  }
+  return arr;
 }
 
 
